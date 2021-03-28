@@ -83,7 +83,7 @@ export default function Home() {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-*:focus {
+*::focus {
     outline: none;
 }
 body {
