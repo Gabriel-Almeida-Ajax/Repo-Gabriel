@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Home() {
+export default function BarApp() {
   return (
 
     <main>
@@ -12,7 +12,7 @@ export default function Home() {
         <div className="navigation">
           <ul>
             <li>
-              <a href="#">
+              <a href="/home">
                 <span className="icon"><i className="fa fa-home" aria-hidden="true" /></span>
                 <span className="tittle">
                   Home
@@ -20,14 +20,14 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/Profile">
                 <span className="icon"><i className="fa fa-user-o" aria-hidden="true" /></span>
                 <span className="tittle">
                   Profile
               </span>
               </a>
             </li><li>
-              <a href="#">
+              <a href="/Message">
                 <span className="icon"><i className="fa fa-commenting-o" aria-hidden="true" /></span>
                 <span className="tittle">
                   Message
@@ -35,7 +35,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/Help">
                 <span className="icon"><i className="fa fa-question-circle" aria-hidden="true" /></span>
                 <span className="tittle">
                   Help
@@ -43,7 +43,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/Settings">
                 <span className="icon"><i className="fa fa-cog" aria-hidden="true" /></span>
                 <span className="tittle">
                   Settings
@@ -51,7 +51,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/Singout">
                 <span className="icon"><i className="fa fa-sign-out" aria-hidden="true" /></span>
                 <span className="tittle">
                   Sing out
