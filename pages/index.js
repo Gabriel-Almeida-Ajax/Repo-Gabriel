@@ -38,7 +38,7 @@ const Icon = styled.span`
     text-align: center;
   
 
-  .fa {
+  &fa {
     font-size: 24px;
   }
 `
@@ -49,11 +49,12 @@ const IconContent = styled.i`
   height: 60px;
   line-height: 60px;
   text-align: center;`
+
 const ListApp = ({ tittle, icon }) => {
   return (
     <ListContent>
       <LinkContent href={`/${tittle}`}>
-        <Icon><i className={icon} aria-hidden="true" /></Icon>
+        <Icon><IconContent className={icon} aria-hidden="true" /></Icon>
         <Tittle>
           {tittle}
         </Tittle>
@@ -74,8 +75,11 @@ export default function Home() {
     { id: '005', tittle: 'Settings', icon: 'fa fa-cog' },
     { id: '006', tittle: 'Sing-Out', icon: 'fa fa-sign-out' }
   ]);
-
-let usage = styled.div`@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap")`
+  
+  const container = styled.div`
+    height: 120px;
+    width: 120px;
+  `
 
   return (
     <div>
@@ -85,14 +89,14 @@ let usage = styled.div`@import url("https://fonts.googleapis.com/css2?family=Pop
       </Head>
 
       <main>
-        <usage>
+        <div className="container">
           <div className="navigation">
             <ul>
               {items.map(item => <ListApp key={item.id} {...item} />)}
             </ul>
           </div>
           <div className="toggle" />
-        </usage>
+        </div>
         <script
           dangerouslySetInnerHTML={{
             __html: `
