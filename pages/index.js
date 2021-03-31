@@ -118,6 +118,13 @@ export default function Home() {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+<<<<<<< HEAD
+
+=======
+*::focus {
+    outline: none;
+}
+>>>>>>> parent of f76f77e (Focus)
 body {
   display: flex;
   justify-content: left;
