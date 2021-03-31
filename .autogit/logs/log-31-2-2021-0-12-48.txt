@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Wed Mar 31 2021 00:12:48 GMT-0300 (Horário Padrão de Brasília)
+------------------------------------------------------
+
+Modified files:
+* pages/index.js
+
+
+Created files:
+
+
+Deleted files:
+* pages/_app.js
+* pages/services/data.js
+
+
+Renamed files:

@@ -2,53 +2,40 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import { useEffect, useState } from "react";
 
+const ListContent = styled.li`
+    position: relative;
+    list-style: none;
+    width: 100%;
+    
+    &:hover {
+      background: #efefef;
+    }
 
-const Container = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-  
-  position: relative;
-  
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-`;
 
-const Navigation = ({ tittle, icon }) => {
+`
+
+const ListApp = ({ tittle, icon }) => {
   return (
-    <li>
-      <a href="/home">
+    <ListContent>
+      <a href={`/${tittle}`}>
         <span className="icon"><i className={icon} aria-hidden="true" /></span>
         <span className="tittle">
           {tittle}
         </span>
       </a>
-    </li>
+    </ListContent>
   )
 }
 
-const ContainerContent = ({ items }) => {
-  return (
-    <Container>
-      <div className="navigation">
-        <ul>
-          {items.map(item => <Navigation key={item.id} {...item} />)}
-        </ul>
-      </div>
-      <div className="toggle" />
-    </Container>
-  )
-}
+
 
 
 export default function Home() {
   const [items, setItems] = useState([
-    { id: '001', tittle: 'Home', icon: 'fa fa-home' },
-    { id: '002', tittle: 'Profile', icon: 'fa fa-user-o' },
-    { id: '003', tittle: 'Message', icon: 'fa fa-commenting-o' },
-    { id: '004', tittle: 'Help', icon: 'fa fa-question-circle' },
+    { id: '001', tittle: 'Home',     icon: 'fa fa-home' },
+    { id: '002', tittle: 'Profile',  icon: 'fa fa-user-o'},
+    { id: '003', tittle: 'Message',  icon: 'fa fa-commenting-o' },
+    { id: '004', tittle: 'Help',     icon: 'fa fa-question-circle' },
     { id: '005', tittle: 'Settings', icon: 'fa fa-cog' },
     { id: '006', tittle: 'Sing-Out', icon: 'fa fa-sign-out' }
   ]);
@@ -61,12 +48,14 @@ export default function Home() {
       </Head>
 
       <main>
-        
-          <ContainerContent items={items} />
-        
-
-      
-
+        <div className="container">
+          <div className="navigation">
+            <ul>
+              { items.map(item => <ListApp key={item.id} {...item} />)}
+            </ul>
+          </div>
+          <div className="toggle" />
+        </div>
         <script
           dangerouslySetInnerHTML={{
             __html: `
