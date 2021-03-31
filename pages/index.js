@@ -10,19 +10,54 @@ const ListContent = styled.li`
     &:hover {
       background: #efefef;
     }
-
-
 `
 
+const LinkContent = styled.a`
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #ff6161;
+  font-weight: 500;
+`
+const Tittle = styled.span`
+  position: relative;
+  display: block;
+  height: 1rem;
+  line-height: 60px;
+  white-space: nowrap;
+`;
+const Icon = styled.span`
+  
+    position: relative;
+    display: block;
+    min-width: 80px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+  
+
+  .fa {
+    font-size: 24px;
+  }
+`
+const IconContent = styled.i`
+  position: relative; 
+  display: block;
+  min-width: 80px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;`
 const ListApp = ({ tittle, icon }) => {
   return (
     <ListContent>
-      <a href={`/${tittle}`}>
-        <span className="icon"><i className={icon} aria-hidden="true" /></span>
-        <span className="tittle">
+      <LinkContent href={`/${tittle}`}>
+        <Icon><i className={icon} aria-hidden="true" /></Icon>
+        <Tittle>
           {tittle}
-        </span>
-      </a>
+        </Tittle>
+      </LinkContent>
     </ListContent>
   )
 }
@@ -32,13 +67,15 @@ const ListApp = ({ tittle, icon }) => {
 
 export default function Home() {
   const [items, setItems] = useState([
-    { id: '001', tittle: 'Home',     icon: 'fa fa-home' },
-    { id: '002', tittle: 'Profile',  icon: 'fa fa-user-o'},
-    { id: '003', tittle: 'Message',  icon: 'fa fa-commenting-o' },
-    { id: '004', tittle: 'Help',     icon: 'fa fa-question-circle' },
+    { id: '001', tittle: 'Home', icon: 'fa fa-home' },
+    { id: '002', tittle: 'Profile', icon: 'fa fa-user-o' },
+    { id: '003', tittle: 'Message', icon: 'fa fa-commenting-o' },
+    { id: '004', tittle: 'Help', icon: 'fa fa-question-circle' },
     { id: '005', tittle: 'Settings', icon: 'fa fa-cog' },
     { id: '006', tittle: 'Sing-Out', icon: 'fa fa-sign-out' }
   ]);
+
+let usage = styled.div`@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap")`
 
   return (
     <div>
@@ -48,14 +85,14 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="container">
+        <usage>
           <div className="navigation">
             <ul>
-              { items.map(item => <ListApp key={item.id} {...item} />)}
+              {items.map(item => <ListApp key={item.id} {...item} />)}
             </ul>
           </div>
           <div className="toggle" />
-        </div>
+        </usage>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -68,7 +105,7 @@ export default function Home() {
           }}
         ></script>
 
-        <style jsx global>{`
+        {/* <style jsx global>{`
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 * {
@@ -191,7 +228,7 @@ body {
 .toggle.active::before{
   content:"\f053"
 }
-      `}</style>
+      `}</style> */}
       </main>
     </div>
   )
