@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Wed Mar 31 2021 20:31:34 GMT-0300 (Horário Padrão de Brasília)
+------------------------------------------------------
+
+Modified files:
+* pages/index.js
+
+
+Created files:
+* pages/Components/AppBar/index.js
+* pages/Components/AppBar/styles.css
+
+
+Deleted files:
+
+
+Renamed files:
